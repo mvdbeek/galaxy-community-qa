@@ -2,7 +2,7 @@
     "jobViewName": "Galaxy Community QA",
     "jobViewDescription": "All Galaxy Community QA jobs",
     "baseJobName": "gx-community-qa-",
-    "testGithubOrg": "jmchilton",
+    "testGithubOrg": "mvdbeek",
     "testGithubProject": "galaxy-community-qa",
     "targetGithubOrg": "galaxyproject",
     "targetGithubProject": "galaxy",
