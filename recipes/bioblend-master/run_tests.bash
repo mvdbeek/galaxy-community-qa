@@ -7,6 +7,7 @@ sleep 10  # TODO: wait on something instead of just sleeping...
 echo `df`
 
 export GALAXY_ROOT="$TARGET_PATH"
+ls "$TARGET_PATH"
 
 createdb -w -U postgres -h postgres galaxy
 
