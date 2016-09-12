@@ -7,3 +7,4 @@ services:
     image: ubuntu
     volumes:
       - "${TARGET_ROOT}:${TARGET_PATH}"
+      - "$TMPDIR":/tmp
