@@ -23,6 +23,7 @@ ADD tools.env /tools.env
 CMD . /tools.env && \
     mkdir -p $REPOSITORY/.. && \
     git clone $GITHUB_REPO $REPOSITORY && \
-    cp -r $TARGET_PATH $GALAXY_ROOT && \ 
+    cp -r $TARGET_PATH $GALAXY_ROOT && \
+    ls $GALAXY_ROOT && \
     . "$PLANEMO_VIRTUALENV/bin/activate" && \
     planemo test --conda_dependency_resolution --conda_auto_init --conda_auto_install --galaxy_root "$GALAXY_ROOT" "$REPOSITORY"/"$REPO_TOOLS"
