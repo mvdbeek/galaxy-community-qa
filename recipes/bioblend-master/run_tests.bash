@@ -6,7 +6,10 @@ sleep 10  # TODO: wait on something instead of just sleeping...
 
 echo `df`
 
+export GALAXY_ROOT="$TARGET_PATH"
+
 createdb -w -U postgres -h postgres galaxy
+
 GALAXY_RUN_ALL=1 bash "$GALAXY_ROOT/run.sh" --daemon --wait
 cd "$BIOBLEND_ROOT"
 . "$BIOBLEND_VIRTUAL_ENV/bin/activate" && python setup.py install
