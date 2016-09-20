@@ -2,14 +2,14 @@ version: '2'
 services:
   test:
     build: .
-    image: kickstart-test
+    image: flavor-builder
     volumes:
       - "${TARGET_ROOT}:${TARGET_PATH}"
       - ".:${TARGET_PATH}/setup"
-    environment:
-      - ANSIBLE_VAULT_PASSWORD  # these variable gets passed through if they exist on the docker host
+    environment:  # these variables get passed through if they exist on the docker host
+      - ANSIBLE_VAULT_PASSWORD
       - IFB_USERNAME
       - IFB_PASSWORD
-      - TARGET_ROOT
-      - TARGET_PATH
+      - TARGET_ROOT  # Set by test framework
+      - TARGET_PATH  # Set by test framework
       - DEBUG

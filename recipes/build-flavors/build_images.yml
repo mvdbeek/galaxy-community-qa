@@ -1,0 +1,11 @@
+- hosts: all
+  vars:
+  tasks:
+   - name: Build docker images
+     docker_image:
+       name: "artbio/{{ item.value.name }}"
+       dockerfile: "{{ item.value.dockerfile }}"
+       state: present
+       force: yes
+       push: no
+     with_dict: "{{ docker_build_dict }}"
