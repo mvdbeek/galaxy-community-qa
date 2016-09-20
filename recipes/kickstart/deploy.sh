@@ -11,7 +11,6 @@ export BIOBLEND_GALAXY_URL=http://$HOST/
 
 # Enter TARGET directory
 cd "$TARGET_PATH"
-git clone --depth=1 --recursive "$BUILD_REPO"
 
 # Get the specified roles
 ansible-galaxy install -r requirements_roles.yml -p roles
