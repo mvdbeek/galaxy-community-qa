@@ -1,0 +1,8 @@
+description: Test deployment on IFB ckoud
+maintainer_github: mvdbeek
+maintainer_email: m.vandenbeek@gmail.com
+timeout: 3600
+interface_description: |
+  This test case verifies :
+    - That we can sucessfully deploy Galaxyickstart on a new IFB cloud instance
+    - That a simple metavisitor workflow completes successfully
