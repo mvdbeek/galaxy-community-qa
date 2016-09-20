@@ -2,3 +2,6 @@
 .venv
 **/def.json
 __pycache__
+.idea
+*.retry
+vault_pass.txt

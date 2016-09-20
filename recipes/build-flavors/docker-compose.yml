@@ -1,0 +1,15 @@
+version: '2'
+services:
+  test:
+    build: .
+    image: kickstart-test
+    volumes:
+      - "${TARGET_ROOT}:${TARGET_PATH}"
+      - ".:${TARGET_PATH}/setup"
+    environment:
+      - ANSIBLE_VAULT_PASSWORD  # these variable gets passed through if they exist on the docker host
+      - IFB_USERNAME
+      - IFB_PASSWORD
+      - TARGET_ROOT
+      - TARGET_PATH
+      - DEBUG

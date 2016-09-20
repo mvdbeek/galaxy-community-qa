@@ -1,0 +1,22 @@
+# We run this playbook in docker, so the ssh keys are safe (assuming we're the only ones able to enter the container)
+- hosts: all
+  vars:
+    - key_file: /root/.ssh/id_rsa
+    - owner: root
+  tasks:
+    - include_vars: ifb_ssh_key.yml
+      no_log: True
+
+    - name: Ensure .ssh directory exists.
+      file:
+        dest: "{{ key_file | dirname }}"
+        mode: 0700
+        owner: "{{ owner }}"
+        state: directory
+
+    - name: Install ssh key
+      copy:
+        content: "{{ ssh_key }}"
+        dest: "{{ key_file }}"
+        mode: 0600
+        owner: "{{ owner }}"
