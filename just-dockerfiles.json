@@ -1,11 +1,11 @@
 {
-    "jobViewName": "Galaxy Community QA",
-    "jobViewDescription": "All Galaxy Community QA jobs",
-    "baseJobName": "gx-community-qa-",
+    "jobViewName": "Galaxy KickStart QA",
+    "jobViewDescription": "All GKS QA jobs",
+    "baseJobName": "gx-kickstart-qa-",
     "testGithubOrg": "mvdbeek",
-    "testGithubProject": "galaxy-community-qa",
-    "targetGithubOrg": "galaxyproject",
-    "targetGithubProject": "galaxy",
+    "testGithubProject": "GalaxyKickStart",
+    "targetGithubOrg": "mvdbeek",
+    "targetGithubProject": "GalaxyKickStart",
     "defaultTargetPath": "/target",
     "customFields": [
         {   
