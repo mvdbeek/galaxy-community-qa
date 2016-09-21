@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-function cleanup() {
+function cleanup () {
     # We stop the instance (or we keep the instance in case we debug interactively)
     if [ "$DEBUG" == "True" ]; then
-        exit
+        echo "Exiting, $HOST is still alive";
     else
-        echo "Cleaning up test-instance"
-        ifbcloud stop -n jenkins_kickstart
+        echo "Cleaning up test-instance";
+        ifbcloud stop -n jenkins_kickstart;
     fi
-{
+}
 
 trap cleanup ERR
 
