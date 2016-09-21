@@ -5,4 +5,4 @@ timeout: 3600
 interface_description: |
   This test case verifies :
     - That we can sucessfully deploy Galaxyickstart on a new IFB cloud instance
-    - That a simple metavisitor workflow completes successfully
+    - That the bioblend integration tests pass when run against the new server

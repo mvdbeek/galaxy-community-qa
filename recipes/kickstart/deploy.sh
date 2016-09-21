@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+function cleanup() {
+    # We stop the instance (or we keep the instance in case we debug interactively)
+    if [ "$DEBUG" == "True" ]; then
+        exit
+    else
+        echo "Cleaning up test-instance"
+        ifbcloud stop -n jenkins_kickstart
+    fi
+{
+
+trap cleanup ERR
+
 # We fail on first error
 set -e
 
@@ -36,10 +48,3 @@ ansible-playbook -u root -vvvv --private-key=/root/.ssh/id_rsa  -i kickstart_inv
 curl http://"$HOST"/api/version | grep version_major
 cd /tmp/ansible/bioblend/
 python /tmp/ansible/bioblend/setup.py nosetests -e 'test_download_dataset|test_upload_from_galaxy_filesystem|test_get_datasets|test_datasets_from_fs'
-
-# We stop the instance (or we keep the instance in case we debug interactively)
-if [ "$DEBUG" == "True" ]; then
-    exit
-else
-    ifbcloud stop -n jenkins_kickstart
-fi
