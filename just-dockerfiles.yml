@@ -1,0 +1,22 @@
+---
+jobViewName: Galaxy KickStart QA
+jobViewDescription: All GKS QA jobs
+baseJobName: gx-kickstart-qa-
+testGithubOrg: mvdbeek
+testGithubProject: GalaxyKickStart
+targetGithubOrg: mvdbeek
+targetGithubProject: GalaxyKickStart
+test_cmd: |
+  cd tests;
+  make run-test TARGET_ROOT=`pwd`/".." RECIPE_NAME="$testName" REPORT=`pwd`/../\${BUILD_TAG}-report.xml
+defaultTargetPath: /target
+customFields:
+- name: interface_description
+  type: text
+  label: Interface to Galaxy Tested
+- name: maintainer_email
+  type: email
+  label: Test Maintainer E-mail
+- name: maintainer_github
+  type: github_login
+  label: Test Maintainer Github
