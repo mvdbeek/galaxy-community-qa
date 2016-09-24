@@ -9,6 +9,30 @@ targetGithubProject: GalaxyKickStart
 test_cmd: |
   cd tests;
   make run-test TARGET_ROOT=`pwd`/".." RECIPE_NAME="$testName" REPORT=`pwd`/../\${BUILD_TAG}-report.xml
+jobCredentials:
+  - type: private_key
+    description: ssh key required for generating github hooks
+    private_key: /Users/marius/.ssh/id_rsa
+    username: mvdbeek
+    credential_id: mvdbeek_gh_key
+  - type: username_password
+    description: username and password for IFB account
+    username: mvdbeek
+    password: 'M5173631!'
+    credential_id: ifb_account
+  - type: secret_text
+    credential_id: ansible_vault
+    description: Ansible vault password
+    secret: APLFeuRil
+  - type: secret_text
+    credential_id: bioblend_api_key
+    description: Bioblend API key
+    secret: admin
+jenkinsCredentials:
+  jenkins_url: http://192.54.201.79/
+  username: admin
+  api_token: 6172e8d107e107d7b63a13e9c1daa73e
+
 defaultTargetPath: /target
 customFields:
 - name: interface_description
